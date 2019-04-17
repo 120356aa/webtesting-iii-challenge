@@ -49,8 +49,17 @@ describe('<Display />', () => {
     const { getByText } = render(<Display closed={false} locked={false} />);
 
     expect(getByText(/open/i).classList[1]).toEqual('green-led');
-    expect(getByText(/locked/i).classList[1]).toEqual('green-led');
+    expect(getByText(/unlocked/i).classList[1]).toEqual('green-led');
 
     cleanup();
   });
+
+  it('light up red', () => {
+    const { getByText } = render(<Display closed={true} locked={true} />);
+
+    expect(getByText(/closed/i).classList[1]).toEqual('red-led');
+    expect(getByText(/locked/i).classList[1]).toEqual('red-led');
+
+    cleanup();
+  })
 });
