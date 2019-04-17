@@ -26,4 +26,10 @@ describe('<Display />', () => {
     getByText(/closed/i);
     cleanup();
   });
+
+  it('should def to unlocked', () => {
+    const { getByText } = render(<Display />);
+    getByText(/unlocked/i);
+    cleanup();
+  });
 });
