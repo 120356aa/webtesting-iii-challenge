@@ -44,4 +44,13 @@ describe('<Display />', () => {
     getByText(/unlocked/i);
     cleanup();
   });
+
+  it('light up green', () => {
+    const { getByText } = render(<Display closed={false} locked={false} />);
+
+    expect(getByText(/open/i).classList[1]).toEqual('green-led');
+    expect(getByText(/locked/i).classList[1]).toEqual('green-led');
+
+    cleanup();
+  });
 });
