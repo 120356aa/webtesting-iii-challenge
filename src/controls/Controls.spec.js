@@ -17,4 +17,11 @@ describe('<Controls />', () => {
     render(<Controls />);
     cleanup();
   });
+
+  it('should render buttons', () => {
+    const { getByText } = render(<Controls />);
+    getByText(/close gate/i);
+    getByText(/lock gate/i);
+    cleanup();
+  });
 });
