@@ -38,4 +38,10 @@ describe('<Display />', () => {
     getByText(/open/i);
     cleanup();
   });
+
+  it('should be unlocked', () => {
+    const { getByText } = render(<Display closed={false} locked={false} />);
+    getByText(/unlocked/i);
+    cleanup();
+  });
 });
