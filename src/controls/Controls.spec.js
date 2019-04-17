@@ -24,4 +24,14 @@ describe('<Controls />', () => {
     getByText(/lock gate/i);
     cleanup();
   });
+
+  test('should call toggleClosed when button is clicked', () => {
+    const toggleClosed = jest.fn();
+    const { getByText } = render(<Controls toggleClosed={toggleClosed} />);
+    const button = getByText(/close gate/i);
+
+    fireEvent.click(button);
+    expect(toggleClosed).toBeCalledTimes(1);
+    cleanup();
+  });
 });
