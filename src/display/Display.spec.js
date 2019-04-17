@@ -1,7 +1,7 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-import Display from './Display'
+import Display from './Display';
 
 describe('<Display />', () => {
   it('should match snap', () => {
