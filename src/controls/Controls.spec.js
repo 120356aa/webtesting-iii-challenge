@@ -34,4 +34,12 @@ describe('<Controls />', () => {
     expect(toggleClosed).toBeCalledTimes(1);
     cleanup();
   });
+
+  test('should disable open and close button when gate locked', () => {
+    const { getByText } = render(<Controls locked={true} />);
+    const button = getByText(/close gate/i);
+
+    expect(button).toBeDisabled();
+    cleanup();
+  });
 });
