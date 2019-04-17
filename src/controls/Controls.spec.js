@@ -42,4 +42,12 @@ describe('<Controls />', () => {
     expect(button).toBeDisabled();
     cleanup();
   });
+
+  test('should disable lock and unlock button when gate open', () => {
+    const { getByText } = render(<Controls closed={false} />);
+    const button = getByText(/lock gate/i);
+
+    expect(button).toBeDisabled();
+    cleanup();
+  });
 });
