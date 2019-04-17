@@ -16,13 +16,13 @@ describe('<Display />', () => {
   });
 
   it('should be locked', () => {
-    const { getByText } = render(<Display closed="true" locked="true" />);
+    const { getByText } = render(<Display closed={true} locked={true} />);
     getByText(/locked/i);
     cleanup();
   });
 
   it('should be closed', () => {
-    const { getByText } = render(<Display closed="true" locked="true" />);
+    const { getByText } = render(<Display closed={true} locked={true} />);
     getByText(/closed/i);
     cleanup();
   });
@@ -30,6 +30,12 @@ describe('<Display />', () => {
   it('should def to unlocked', () => {
     const { getByText } = render(<Display />);
     getByText(/unlocked/i);
+    cleanup();
+  });
+
+  it('should def to open', () => {
+    const { getByText } = render(<Display />);
+    getByText(/open/i);
     cleanup();
   });
 });
