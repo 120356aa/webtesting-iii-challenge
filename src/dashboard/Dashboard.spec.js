@@ -13,5 +13,14 @@ describe('<Dashboard />', () => {
   it('should render', () => {
     render(<Dashboard />);
     cleanup();
-  })
+  });
+
+  it('should show controls', () => {
+    const { getByText } = render(<Dashboard />);
+    getByText(/unlocked/i);
+    getByText(/open/i);
+    getByText(/lock gate/i);
+    getByText(/close gate/i);
+    cleanup();
+  });
 });
